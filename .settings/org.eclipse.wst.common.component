@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="demo_servlet_server_info">
+    <wb-module deploy-name="demo_ServletContext">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="demo_servlet_server_info"/>
-        <property name="java-output-path" value="/demo_servlet_server_info/build/classes"/>
+        <property name="java-output-path" value="/demo_ServletContext/build/classes"/>
+        <property name="context-root" value="demo_ServletContext"/>
     </wb-module>
 </project-modules>
