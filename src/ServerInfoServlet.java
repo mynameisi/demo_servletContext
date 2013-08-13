@@ -43,14 +43,27 @@ public class ServerInfoServlet extends HttpServlet {
 		}
 		context.setAttribute("total", siteCount);// 更新网站的访问数目
 
+		//获得服务器地址
 		String serverName = request.getServerName();
+		
+		//获得服务器端口号
 		int serverPort = request.getServerPort();
+		
+		//获得服务器/容器相关信息，比如：Apache Tomcat/7.0.42
 		String serverInfo = context.getServerInfo();
+		
+		//获得Servlet的版本号，比如 3.2 [3就是Major, 2就是Minor]
 		int major = context.getMajorVersion();
 		int minor = context.getMinorVersion();
 		String servletVersion = Integer.toString(major) + '.' + Integer.toString(minor);
+		
+		//获得所有的ServletContext Attributes，转化成ArrayList
 		ArrayList<String> aList = Collections.list(context.getAttributeNames());
+		
+		//获得所有的ServletContext 初始变量init-param，转化成ArrayList, 参看Web.xml <context-param>
 		ArrayList<String> ctxPList = Collections.list(context.getInitParameterNames());
+		
+		//获得所有的该Servlet的 初始变量init-param，转化成ArrayList, 参看Web.xml <servlet><init-param>
 		ArrayList<String> servletPList = Collections.list(getInitParameterNames());
 
 		PrintWriter out = getHTMLWritter(response);
@@ -86,7 +99,7 @@ public class ServerInfoServlet extends HttpServlet {
 	}
 
 	/**
-	 * Get the PrintWriter to write back HTML
+	 * 获取HTML形式的输出流
 	 * 
 	 * @param response
 	 * @return
